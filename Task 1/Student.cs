@@ -48,7 +48,7 @@ namespace Task_1
         {
             foreach (Mark mark in this.Marks)
             {
-                Console.WriteLine($"{mark.SubjectName} --- {mark.Value}\r\n");
+                Console.WriteLine($"{this.FirstName} {this.LastName}-{mark.SubjectName} --- {mark.Value}\r\n");
             }
             Console.WriteLine("\r\n");
         }
