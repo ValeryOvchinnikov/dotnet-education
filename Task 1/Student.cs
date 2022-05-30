@@ -34,14 +34,28 @@ namespace Task_1
             this.Marks = marks;
         }
 
-        public double GetAvgMark()
+        public double GetAvgMark(out double avg)
         {
-            return this.Marks.Average(m => m.Value);
+            double a = 0;
+            for (int i = 0; i < Marks.Length; i++)
+            {
+                a = a + Marks[i].Value;
+            }
+            return avg = a / Marks.Length;
+        }
+
+        public void GetAllMarks()
+        {
+            foreach (Mark mark in this.Marks)
+            {
+                Console.WriteLine($"{mark.SubjectName} --- {mark.Value}\r\n");
+            }
+            Console.WriteLine("\r\n");
         }
 
         public void ResetAllMarks()
         {
-            foreach (Mark mark in Marks)
+            foreach (Mark mark in this.Marks)
             {
                 mark.Value = 0;
             }
